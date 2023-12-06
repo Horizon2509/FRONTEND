@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var bookTripBtn = document.getElementById("bookTripBtn");
     var container = document.querySelector(".container");
     var closepopup = document.getElementById("close-container");
-    var result = document.querySelector(".popupresult");
+    
 
     // Add a click event listener to the button
     bookTripBtn.addEventListener("click", function() {
@@ -93,8 +93,96 @@ document.addEventListener("DOMContentLoaded", function() {
 
   });
 
+// Controller definition
+var app = angular.module('myApp', []);
+var result = document.getElementById("result");
+        app.controller('myController', function ($scope) {
+            $scope.showResultPopup = false;
+            $scope.first = "";
+            $scope.amount = 0;
+            popupResult.addEventListener("click", function() {
+                // Change the display property of the container to flex
+                popupresult.style.display = "flex";
+              });
+            $scope.submitForm = function () {
+                // Add any form submission logic here
+                console.log("oke");
+                    togglePopup(result);
+                // Set showResultPopup to true to display the popup
+                $scope.showResultPopup = true;
+            };
+
+            $scope.confirmResultPopup = function () {
+                // Add logic here
+            };
+
+            $scope.cancelResultPopup = function () {
+                $scope.showPopupcontent = true;
+            };
+        });
+
+
+  // Function to open popup
+function openPopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'flex';
+    document.body.classList.add('popup-open');
+}
+
+
+// Function to close popup
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+    document.body.classList.remove('popup-open');
+}
+
+// Add event listener to close popup when close button is clicked
+const closePopupBtn = document.getElementById('close-popup');
+closePopupBtn.addEventListener('click', closePopup);
 
 
 
 
 
+function togglePopup(popupId) {
+    const popup = document.getElementById(popupId + '-popup');
+    popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
+    document.body.classList.toggle('popup-open');
+} 
+
+function openFirstPopup() {
+    document.getElementById("overlay").style.display = "flex";
+    document.getElementById("popup1").style.display = "block";
+  }
+
+  function openSecondPopup() {
+    document.getElementById("popup1").style.display = "none";
+    document.getElementById("popup2").style.display = "block";
+    
+  }
+
+  function confirmAction() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("popup2").style.display = "none";
+  }
+
+  function closeSecondPopup() {
+    document.getElementById("popup2").style.display = "none";
+    document.getElementById("popup1").style.display = "block";
+  }
+
+
+  function closePopup(popupId) {
+    const popups = document.querySelectorAll('.popup');
+    for (const popup of popups) {
+        popup.style.display = 'none';
+    }
+    document.body.classList.remove('popup-open');
+}
+
+const closePopupBtn1 = document.getElementById('close-popup1');
+closePopupBtn1.addEventListener('click', () => closePopup('popup1'));
+
+const closePopupBtn2 = document.getElementById('close-popup2');
+closePopupBtn2.addEventListener('click', () => closePopup('popup2'));

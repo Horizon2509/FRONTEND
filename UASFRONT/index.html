@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orchid Forest Cikole</title>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&
     display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
 
 <body>
 
@@ -32,345 +31,561 @@
         </ul>
 
         <div class="h-right">
-            <a href="follow">Follow us</a>
+            <div class="dropdown">
+                <a href="#" class="follow-btn">Follow us <span class="arrow-down">&#9662;</span></a>
+                <div class="dropdown-content">
+                    <a href="https://www.instagram.com/orchidforestcikole/?hl=en"><i class="ri-instagram-fill"></i> Instagram</a>
+                    <a href="https://twitter.com/"><i class="ri-twitter-fill"></i> Twitter</a>
+                    <a href="https://www.facebook.com/"><i class="ri-facebook-fill"></i> Facebook</a>
+                </div>
+            
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+
+    </header>
+
+    <section id="home" class="home">
+        <div class="hometext">
+            <h5>Start</h5>
+            <h1>Planning your <br> own travel</h1>
+            <p>In Indonesia there are many types of flowers
+                <br> in Bandung if you want to see hundreds types of orchids
+                <br> specifically in Orchid Forest Cikole
+            <p></p>
+
+            <a id="bookTripBtn" class="btn" onclick="openFirstPopup()">Book a trip </a>
+            </p>
+        </div>
+    </section>
+
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide">
+                <img src="img/ad11.png" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="img/ad12.png" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="img/ad13.png"
+                    alt="Slide 3">
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+    </div>
+
+    <div id="prev">&lt;</div>
+    <div id="next">&gt;</div>
+
+    <br><br>
+    <br><br>
+
+    <!-- HARUS ADA DISINI GTAU KENAPA KALO DI FILE JS RUSAK, GAJELAS NIH -->
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const slides = document.querySelector('.slides');
+        const slideItems = document.querySelectorAll('.slide');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        let currentIndex = 0;
+        const slideWidth = slideItems[0].clientWidth;
+        const autoSlideInterval = 2000; // Waktu dalam milidetik antara perpindahan otomatis
+
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideItems.length;
+            updateSlidePosition();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slideItems.length) % slideItems.length;
+            updateSlidePosition();
+        }
+
+        function autoSlide() {
+            nextSlide();
+        }
+
+        nextButton.addEventListener('click', () => {
+            clearInterval(autoSlideIntervalId); // Menghentikan perpindahan otomatis saat tombol next diklik
+            nextSlide();
+        });
+
+        prevButton.addEventListener('click', () => {
+            clearInterval(autoSlideIntervalId);
+            prevSlide();
+        });
+
+        let autoSlideIntervalId = setInterval(autoSlide, autoSlideInterval);
+
+        // Menambahkan event listener untuk menghentikan perpindahan otomatis saat hover pada carousel
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideIntervalId);
+        });
+
+        // Menambahkan event listener untuk melanjutkan perpindahan otomatis saat keluar dari hover pada carousel
+        carousel.addEventListener('mouseleave', () => {
+            autoSlideIntervalId = setInterval(autoSlide, autoSlideInterval);
+        });
+
+    </script>
+    <!-- HARUS ADA DISINI GTAU KENAPA KALO DI FILE JS RUSAK, GAJELAS NIH -->
+
+
+
+
+
+    <div class="popup" id="overlay">
+        <div class="popup-content" id="popup1">
+            <span class="close" onclick="closePopup('popup1')">&times;</span>
+            <div class="container">
+                <div class="isi">
+                    <h2>Book A Trip</h2>
+                    <br>
+                    <div class="firstname">
+                        <div class="input-container">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                                </div>
+                                <input type="text" class="form-control" ng-model="first" placeholder="First Name"
+                                    id="first-name-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lastname">
+                        <div class="input-container">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ri-user-fill"></i></span>
+                                </div>
+                                <input type="text" class="form-control" ng-model="last" placeholder="Last Name"
+                                    id="last-name-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="phone">
+                        <div class="input-container">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ri-phone-fill"></i></span>
+                                </div>
+                                <input type="text" class="form-control" ng-model="number" placeholder="Phone Number"
+                                    id="phone-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="emailpopup">
+                        <div class="input-container">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ri-mail-fill"></i></span>
+                                </div>
+                                <input type="email" class="form-control" ng-model="email" placeholder="Email"
+                                    id="email-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arrival">
+                        <div class="input-container">
+                            <label for="arrivalDate">Arrival Date:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"></i></span>
+                                </div>
+                                <input type="date" class="form-control" id="arrivalDate" ng-model="date"
+                                    id="arrival-input">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="amount">
+                        <div class="input-container">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"></i></span>
+                                </div>
+                                <select id="amountSelect" class="form-control custom-select" ng-model="amount"
+                                    style="width: 220px; height: 30px; border-radius: 5px;">
+                                    <option value="" disabled selected>Select an amount</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-text">
+                <input type="checkbox" class="pencetan" id="receiveContent" name="receiveContent">
+                <h5>Would you like to receive other Orchid Forest content?</h5>
+                <p>By clicking this you will receive news, special
+                    offers, feedback surveys<br>
+                    and invitations from Orchid Forest</p>
+
+            </div>
+            <button class="btn" onclick="openSecondPopup()">Submit</button>
+        </div>
+
+        <div class="popup2" id="popup2">
+            <div class="popup-content2">
+                <span class="close" onclick="confirmAction()">&times;</span>
+                <div class="isi2">
+
+                    <div class="judulisi2">
+                        <h2>Thank You!</h2>
+                        <p> Your submission has been received</p>
+                        <p> We will contact you as soon as possible</p>
+                    </div>
+                    <div class="isinya">
+                        <div class="dalamisinya">
+                        <p class="name"> Your name <b> : {{ first + ' ' + last }}</b></p>
+                        <p class="ardate"> Arrival date<b>: {{ date | date:' dd-MM-yyyy' }}</b></p>
+                        <p class="ticket"> Amount Ticket<b>: {{ amount }}</b></p>
+                        <p class="number"> Phone<b>: {{ number }}</b></p>
+                        <p class="mail"> Email<b>: {{ email }}</b></p>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="confirmAction()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('myController', function ($scope) {
+            // Add any additional logic or functions as needed
+            $scope.closePopup = function () {
+                // Add logic to close the popup
+                console.log('Popup closed');
+            };
+        });
+    </script>
+
+    <section id="desc" class="desc">
+        <div class="descimg">
+            <img src="/UASFRONT/img/jembatan.jpg">
+        </div>
+        <div class="desctext">
+            <h5>West Bandung</h5>
+            <h2>Orchid Forest Cikole</h2>
+            <p>
+                The park, established since August 2017,
+                covers an area of approximately 12 hectares
+                and is touted as the largest orchid park in Indonesia.
+                Orchid Forest Cikole boasts 157 varieties of orchid flowers
+                with diverse shapes and colors
+                sourced from all corners of the world. </p>
+            <a href="https://napaktilas.net/orchid-forest-cikole/" class="btn">Read More</a>
+        </div>
+    </section>
+    <div id="library" class="info">
+        <br>
+        <br>
+        <h5>Information</h5>
+        <br>
+        <br>
+    </div>
+    <div class="our">
+        <h5> Our Popular Place</h5>
+    </div>
+    <section class="library">
+        <div class="content">
+
+            <div class="row" onclick="togglePopup('orchidhouse')">
+                <div class="rowimg">
+                    <img src="/UASFRONT/img/orchidhouse.jpg">
+                </div>
+                <h4>Orchid House</h4>
+            </div>
+
+            <div class="row" onclick="togglePopup('goldenpine')">
+                <div class="rowimg">
+                    <img src="/UASFRONT/img/goldenpine.jpg">
+                </div>
+                <h4>Golden Pine</h4>
+            </div>
+
+            <div class="row" onclick="togglePopup('woodbridge')">
+                <div class="rowimg">
+                    <img src="/UASFRONT/img/woodbridge.png">
+                </div>
+                <h4>Wood Bridge</h4>
+            </div>
+
+            <div class="row" onclick="togglePopup('orchidcastle')">
+                <div class="rowimg">
+                    <img src="/UASFRONT/img/caslte.png">
+                </div>
+                <h4>Orchid Castle</h4>
+            </div>
+
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="close" id="close-popup">&times;</span>
+            </div>
+        </div>
+        <!-- Popup container DAERAH ITU LAH-->
+        <div class="popup" id="orchidhouse-popup">
+            <div class="orchid-content">
+                <span class="close" onclick="togglePopup('orchidhouse')">&times;</span>
+                <div class="judulorchid">
+                    <p>Special Edition</p>
+                    <h2>BREAKING NEWS</h2>
+                </div>
+                <div class="kontener1">
+                    <div class="kontener1bg"></div>
+                    <h3>ORCHID FOREST </h3>
+                    <p>According to the name itself, this tourist attraction takes the concept of an orchid house where
+                        there are 157 varieties of orchids in the Orchid Forest Cikole.
+                        The Orchid House is where those Orchids are placed. In here, tourist can find a lot of different
+                        kinds of orchids. There are also other types of plants and flowers
+                        that are scattered around the Orchid Forest Cikole Area.
+                    <p>
+                </div>
+                <div class="pinggir">
+                    <p>ORCHID HOUSE IS VERY READY FOR YOUR ARRIVAL</p>
+                    <div class="pinggirbg"></div>
+                    <p>Orchid Forest est un lieu enchanteur niché au cœur de la nature luxuriante, offrant une
+                        expérience immersive parmi une variété exquise d'orchidées.
+                    </p>
+                    <div class="pinggirbg2">
+
+                    </div>
+                </div>
+                <!-- Tambahkan elemen lainnya sesuai kebutuhan -->
+            </div>
+        </div>
+
+        <div class="popup" id="goldenpine-popup">
+            <div class="goldenpine-content">
+                <span class="close" onclick="togglePopup('goldenpine')">&times;</span>
+                <div class="judulgold">
+                    <p>Special Edition</p>
+                    <h2>BREAKING NEWS</h2>
+                </div>
+                <div class="kontener2">
+                    <div class="kontener2bg"></div>
+                    <h3>GOLDEN PINE </h3>
+                    <p>
+                        Here is the famous aesthetic and beautiful cafe in Orchid Forest Cikole, adorned with Golden
+                        Pine flowers.
+                        Here, visitors can capture Instagram-worthy photos with a backdrop filled with charming flowers.
+                        Additionally, visitors can sit comfortably while enjoying the offerings at this cafe. The menu
+                        includes pastries,
+                        burgers, hot dogs, sausages, and even french fries. As for beverages, there are options such as
+                        tea, hot chocolate,
+                        milkshakes, and even gelato available.
+                    <p>
+                </div>
+                <div class="pinggir2">
+                    <p>GOLDEN PINE IS VERY READY FOR YOUR ARRIVAL</p>
+                    <div class="pinggirbg2"></div>
+                    <p>L'atmosphère du Golden Pine peut vous faire sentir à quel point les restaurants en France sont
+                        beaux
+                    </p>
+                    <div class="pinggirbg22">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="woodbridge-popup">
+            <div class="woodbridge-content">
+                <span class="close" onclick="togglePopup('woodbridge')">&times;</span>
+                <div class="judulwood">
+                    <p>Special Edition</p>
+                    <h2>BREAKING NEWS</h2>
+                </div>
+                <div class="kontener3">
+                    <div class="kontener3bg"></div>
+                    <h3>WOOD BRIDGE </h3>
+                    <p>You can also cross the 50-meter-long suspension bridge at Orchid Forest Cikole, known as the Wood
+                        Bridge.
+                        Walking on this bridge, visitors can enjoy the enchanting pine orchid forest.
+
+                        If you visit Wood Bridge in the late afternoon or evening, it's equally stunning.
+                        The forest view becomes even more beautiful with the illuminated lights. Not only on the bridge
+                        but also in several
+                        other places throughout Orchid Forest Cikole.
+                    <p>
+                </div>
+                <div class="pinggir3">
+                    <p>WOOD BRIDGE IS VERY READY FOR YOUR ARRIVAL</p>
+                    <div class="pinggirbg3"></div>
+                    <p>This bridge was made with the concept of walking in the middle of the forest with beautiful views
+                    </p>
+                    <div class="pinggirbg23">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="popup" id="orchidcastle-popup">
+            <div class="orchidcastle-content">
+                <span class="close" onclick="togglePopup('orchidcastle')">&times;</span>
+                <div class="judulcastle">
+                    <p>Special Edition</p>
+                    <h2>BREAKING NEWS</h2>
+                </div>
+                <div class="kontener4">
+                    <div class="kontener4bg"></div>
+                    <h3>ORCHID CASTLE </h3>
+                    <p>
+                        Orchid Castle is a suitable place for children as it offers various children's games that
+                        support the
+                        enhancement of knowledge and insights for visitors. One of the attractions that contribute to
+                        knowledge enrichment
+                        is the Children's Reading Park. This park is filled with various interesting books that are
+                        perfect for children visiting
+                        this tourist destination. Undoubtedly, it will be very educational for children to visit this
+                        place.
+                    <p>
+                </div>
+                <div class="pinggir4">
+                    <p>ORCHID CASTLE IS VERY KIND FOR YOU CHILDREN</p>
+                    <div class="pinggirbg4"></div>
+                    <p>Atmosfera de la Orchid Castle te poartă ca și cum ai fi în România
+                    </p>
+                    <div class="pinggirbg24">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="googlem">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.91060706567!2d107.63741069999999!3d-6.7807334!2m3!1f0!2f
+                    0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e038e1a71607%3A0x79f858778d1e2e62!2sOrchid%20Forest%20Cikole!5e0!3m2!1sen!2sid!4v170
+                    0820450119!5m2!1sen!2sid" width="1480" height="370" style="border:0;" allowfullscreen=""
+                loading="lazy" referrerpolicy="no-referrer
+                    -when-downgrade"></iframe>
+        </div>
+    </section>
+    <section class="spot">
+        <h2></h2>
+        <h5>
+            SPOT F&B
+        </h5>
+        <div id="spot" class="spotcoba">
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </section>
+    <div class="spotimg">
+        <div class="row1">
+            <div class="col1">
+                <h2>Golden<br>Pine</h2>
+                <h3>
+                    Golden Pine Orchid Forest Cikole offers a cafe
+                    with a tea concept amidst natural beauty that is like Europe.</h3>
+                <p>(Aesthetic/Instagrammable)</p>
+            </div>
+
+            <div class="col2">
+                <img src="/UASFRONT/img/goldenpine.jpg" class="pine">
+                <div class="colorbox"></div>
+            </div>
+
+        </div>
+        <div class="offer">
+            <h2>What We Offered</h2>
+            <div class="line"></div>
+        </div>
+        <div class="gold2">
+            <img src="/UASFRONT/img/gold2.png" width="1600px" height="1000px">
+            <div class="gold2text">
+                <h2>Pastry</h2>
+            </div>
+            <p>we're offering a wide variety of freshly baked pastries.
+                Our baked treats are made from scratch using the finest ingredient</p>
+
+        </div>
+        <div class="gold3">
+            <img src="/UASFRONT/img/gold3.jpg">
+            <div class="gold3text">
+                <h2>Coffee&Tea </h2>
+            </div>
+            <p>feel the experience of drinking tea, coffee, or hot chocolate!
+                we offer a delightful range of premium teas and coffee blends.</p>
+        </div>
+    </div>
+    <div id="contact" class="booknow">
+        <a href="#home" class="btn">Book Now </a>
+
+    </div>
+    <div class="contact">
+        <div class="insta">
+            <h5>Follow Us In</h5>
             <a href="https://www.instagram.com/orchidforestcikole/?hl=en"><i class="ri-instagram-fill"></i></a>
             <a href="https://www.instagram.com/orchidforestcikole/?hl=en"><i class="ri-twitter-fill"></i></a>
             <a href="https://www.instagram.com/orchidforestcikole/?hl=en"><i class="ri-facebook-fill"></i></a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
-
-
-    </header>
-
-    <div>
-        <section id="home" class="home">
-            <div class="hometext">
-                <h5>Let's</h5>
-                <h1>Planning your <br> own travel</h1>
-                <p>In Indonesia there are many types of flowers
-                    <br> in Bandung if you want to see hundreds types of orchids
-                    <br> specifically in Orchid Forest Cikole
-                <p></p>
-
-                <a id="bookTripBtn" class="btn">Book a trip </a>
-                </p>
-            </div>
-        </section>
-        
-            <div class="container" id="container" ng-controller="myController">
-                <div class="content" ngshow="showPopupContent">
-
-                </div>
-                <span class="close" id="close-container" ng-click="closePopup()">&times;</span>
-                <div class="logreg-box">
-                    <div class="form-box login">
-                        <form action="#">
-                            <h2>Book Now</h2>
-            
-                            <div class="firstname">
-                                <div class="input-container">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ri-user-fill"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" ng-model="first" placeholder="First Name">
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="lastname">
-                                <div class="input-container">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ri-user-fill"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" ng-model="last" placeholder="Last Name">
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="phone">
-                                <div class="input-container">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ri-phone-fill"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" ng-model="number" placeholder="Phone Number">
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="emailpopup">
-                                <div class="input-container">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ri-mail-fill"></i></span>
-                                        </div>
-                                        <input type="email" class="form-control" ng-model="email" placeholder="Email">
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="arrival">
-                                <div class="input-container">
-                                    <label for="arrivalDate" >Arrival Date:</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"></i></span>
-                                        </div>
-                                        <input type="date" class="form-control" id="arrivalDate" ng-model="date">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-            
-                            <div class="amount">
-                                <div class="input-container">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"></i></span>
-                                        </div>
-                                        <select id="amountSelect" class="form-control custom-select" ng-model="amount" style="width: 220px; height: 30px; border-radius: 5px;">
-                                            <option value="" disabled selected>Select an amount</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                        
-                        
-        
-                        <!-- ... rest of your form ... -->
-        
-                        <div class="submit">
-                            <div class="submit-text">
-                                <input type="checkbox" class="pencetan" id="receiveContent" name="receiveContent">
-                                <h5>Would you like to receive other Orchid Forest content?</h5>
-                                <p>By clicking this, you will receive news, special offers, feedback surveys, and invitations from Orchid Forest</p>
-                            </div>
-                            <button type="button" class="btn" ng-click="submitForm()">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="popupresult" id="popupresult" ng-controller="myController">
-                <div class="result-content" ng-show="showResultPopup">
-                    <h2>Form Submitted Successfully</h2>
-                    <div class="isi">
-                        <p>First Name <b>: {{ first }}</b></p>
-                        <p>Amount <b>: {{ amount }}</b></p>
-                        <button type="button" ng-click="confirmResultPopup()">Confirm</button>
-                        <button type="button" ng-click="cancelResultPopup()">Cancel</button>
-                    </div>
-                </div>
-            </div>
+        <div class="contactmap">
+            <h5><i class="ri-map-pin-line"></i></h5>
+            <p>
+                <a href="https://www.google.com/maps?q=Genteng, Cikole, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391"
+                    target="_blank">
+                    Genteng, Cikole, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391
+                </a>
+            </p>
         </div>
+
+        <div class="hour">
+            <h5><i class="ri-time-line"></i></i></h5>
+            <p>
+                07.00 AM - 8.00PM
+            </p>
+        </div>
+
+        <div class="wa">
+            <h5><i class="ri-whatsapp-line"></i></h5>
+            <p>
+                0886969699
+            </p>
+        </div>
+
+        <div class="email">
+            <h5><i class="ri-pencil-ruler-2-fill"></i></h5>
+            <p> Created by NG-ASAL </p>
+            <p> 2023</p>
+        </div>
+
+
     </div>
-        <script>
-            var app = angular.module('myApp', []);
-
-            app.controller('myController', function ($scope) {
-                // Add any additional logic or functions as needed
-                $scope.closePopup = function () {
-                    // Add logic to close the popup
-                    console.log('Popup closed');
-                };
-            });
-        </script>
-
-        <section id="desc" class="desc">
-            <div class="descimg">
-                <img src="/UASFRONT/img/jembatan.jpg">
-            </div>
-            <div class="desctext">
-                <h5>West Bandung</h5>
-                <h2>Orchid Forest Cikole</h2>
-                <p>
-                    The park, established since August 2017,
-                    covers an area of approximately 12 hectares
-                    and is touted as the largest orchid park in Indonesia.
-                    Orchid Forest Cikole boasts 157 varieties of orchid flowers
-                    with diverse shapes and colors
-                    sourced from all corners of the world. </p>
-                <a href="https://napaktilas.net/orchid-forest-cikole/" class="btn">Read More</a>
-            </div>
-        </section>
-        <div id="library" class="info">
-            <br>
-            <br>
-            <h5>Information</h5>
-            <br>
-            <br>
-        </div>
-        <div class="our">
-            <h5> Our Popular Place</h5>
-        </div>
-        <section class="library">
-            <div class="content">
-                <div class="row">
-                    <div class="rowimg">
-                        <img src="/UASFRONT/img/orchidhouse.jpg">
-                    </div>
-                    <h4>Orchid House</h4>
-                </div>
-                <!-- <div class="popup" id="popup">
-                    <div class="popup-content">
-                        <span class="close" id="close-popup">&times;</span>
-                        <h2>Book a Trip</h2>
-                        <p>This is the popup content.</p>
-                    </div>
-                </div> -->
-
-                <div class="row">
-                    <div class="rowimg">
-                        <img src="/UASFRONT/img/goldenpine.jpg">
-                    </div>
-                    <h4>Golden Pine</h4>
-                </div>
-
-
-                <div class="row">
-                    <div class="rowimg">
-                        <img src="/UASFRONT/img/woodbridge.png">
-                    </div>
-                    <h4>Wood Bridge</h4>
-                </div>
-
-                <div class="row">
-                    <div class="rowimg">
-                        <img src="/UASFRONT/img/caslte.png">
-                    </div>
-                    <h4>Orchid Caslte</h4>
-                </div>
-            </div>
-            <div class="location">
-                <h5>Our Location</h5>
-            </div>
-
-            <div class="googlem">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.91060706567!2d107.63741069999999!3d-6.7807334!2m3!1f0!2f
-                    0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e038e1a71607%3A0x79f858778d1e2e62!2sOrchid%20Forest%20Cikole!5e0!3m2!1sen!2sid!4v170
-                    0820450119!5m2!1sen!2sid" width="1480" height="370" style="border:0;" allowfullscreen=""
-                    loading="lazy" referrerpolicy="no-referrer
-                    -when-downgrade"></iframe>
-            </div>
-        </section>
-        <section class="spot">
-            <h2></h2>
-            <h5>
-                SPOT F&B
-            </h5>
-            <div id="spot" class="spotcoba">
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-        </section>
-        <div class="spotimg">
-            <div class="row1">
-                <div class="col1">
-                    <h2>Golden<br>Pine</h2>
-                    <h3>
-                        Golden Pine Orchid Forest Cikole offers a cafe
-                        with a tea concept amidst natural beauty that is like Europe.</h3>
-                    <p>(Aesthetic/Instagrammable)</p>
-                    <a href="##" class="btn">Book Reservation</a>
-                </div>
-
-                <div class="col2">
-                    <img src="/UASFRONT/img/goldenpine.jpg" class="pine">
-                    <div class="colorbox"></div>
-                </div>
-
-            </div>
-            <div class="offer">
-                <h2>What We Offered</h2>
-                <div class="line"></div>
-            </div>
-            <div class="gold2">
-                <img src="/UASFRONT/img/gold2.png" width="1600px" height="1000px">
-                <div class="gold2text">
-                    <h2>Pastry</h2>
-                </div>
-                <p>we're offering a wide variety of freshly baked pastries.
-                    Our baked treats are made from scratch using the finest ingredient</p>
-
-            </div>
-            <div class="gold3">
-                <img src="/UASFRONT/img/gold3.jpg">
-                <div class="gold3text">
-                    <h2>Coffee&Tea </h2>
-                </div>
-                <p>feel the experience of drinking tea, coffee, or hot chocolate!
-                    we offer a delightful range of premium teas and coffee blends.</p>
-            </div>
-        </div>
-        <div id="contact" class="booknow">
-            <a href="#" class="btn">Book Now </a>
-
-        </div>
-        <div class="contact">
-            <div class="insta">
-                <h5>Follow Us In</h5>
-                <a href="https://www.instagram.com/orchidforestcikole/?hl=en"><i class="ri-instagram-fill"></i></a>
-                <a href="https://www.instagram.com/orchidforestcikole/?hl=en"><i class="ri-twitter-fill"></i></a>
-                <a href="https://www.instagram.com/orchidforestcikole/?hl=en"><i class="ri-facebook-fill"></i></a>
-                <div class="bx bx-menu" id="menu-icon"></div>
-            </div>
-            <div class="contactmap">
-                <h5><i class="ri-map-pin-line"></i></h5>
-                <p>
-                    <a href="https://www.google.com/maps?q=Genteng, Cikole, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391"
-                        target="_blank">
-                        Genteng, Cikole, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391
-                    </a>
-                </p>
-            </div>
-
-            <div class="hour">
-                <h5><i class="ri-time-line"></i></i></h5>
-                <p>
-                    07.00 AM - 8.00PM
-                </p>
-            </div>
-
-            <div class="wa">
-                <h5><i class="ri-whatsapp-line"></i></h5>
-                <p>
-                    0886969699
-                </p>
-            </div>
-
-            <div class="email">
-                <h5><i class="ri-mail-fill"></i></h5>
-                <p>
-                    Randy.535220180@stu.untar.ac.id
-                </p>
-                <p>
-                    George.535220173@stu.untar.ac.id
-                </p>
-            </div>
-
-
-        </div>
     </div>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.
-        3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-
-        C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o
-        0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+
 </body>
 
 </html>

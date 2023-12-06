@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,21 +9,24 @@
     scroll-behavior: smooth;
     font-family: 'Open Sans', sans-serif;
 }
-:root{
+
+:root {
     --text-color: #fff;
     --bg-color: #000;
     --main-color: #ffa343;
-    
+
     --h1-font: 6rem;
     --h2-font: 3rem;
     --p-font: 1rem;
 }
-body{
-    color:var(--text-color);
+
+body {
+    color: var(--text-color);
     background-color: var(--bg-color);
-    overflow-x:hidden ;
-    
+    overflow-x: hidden;
+
 }
+
 header {
     position: fixed;
     top: 0;
@@ -36,45 +39,53 @@ header {
     align-items: center;
     justify-content: space-between;
     transition: all .50s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Warna border transparan */
-    backdrop-filter: blur(10px); /* Menambahkan efek blur */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Warna border transparan */
+    backdrop-filter: blur(10px);
+    /* Menambahkan efek blur */
 }
 
 
 
-.logo{
+.logo {
     font-size: 33px;
     color: var(--text-color);
     font-weight: 600;
     margin-right: 10px;
 }
-span{
-    color:purple;
+
+span {
+    color: purple;
     font-size: 25px;
 }
-.navbar{
+
+.navbar {
     display: flex;
 }
-.navbar a{
-    color:var(--text-color);
+
+.navbar a {
+    color: var(--text-color);
     font-size: var(--p-font);
     font-weight: 500;
-    margin: 12px 15px;
+    margin: 15px 15px;
     transition: all .50 ease;
 }
-.navbar a:hover{
+
+.navbar a:hover {
     color: purple;
 }
-.h-right{
+
+.h-right {
     display: flex;
     align-items: center;
 }
-.h-right a:first-child{
-    color: white;
+
+.h-right a:first-child {
     font-size: var(--p-font);
     margin: 20px;
 }
-.h-right a{
+
+.h-right a {
     vertical-align: middle;
     font-size: 20px;
     color: white;
@@ -82,18 +93,21 @@ span{
     margin-left: 10px;
     transition: all .50s ease;
 }
-.h-right a:hover{
+
+.h-right a:hover {
     color: purple;
     transform: translateY(-3px);
 }
-#menu-icon{
-    color:white;
+
+#menu-icon {
+    color: white;
     font-size: 30px;
     cursor: pointer;
     z-index: 10001;
     display: none;
 }
-section{
+
+section {
     padding: 70px 17% 60px;
 }
 
@@ -102,7 +116,7 @@ section{
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('/UASFRONT/img/item.jpeg');
     background-size: cover;
     background-position: bottom center;
-    background-attachment:scroll;
+    background-attachment: scroll;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -111,28 +125,31 @@ section{
     width: 100%;
 }
 
-.hometext h5{
+.hometext h5 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 6px;
-    color:purple;
+    color: purple;
 }
-.hometext h1{
+
+.hometext h1 {
     font-size: var(--h1-font);
     font-weight: 800;
     line-height: 1;
     margin-bottom: 20px;
 }
-.hometext p{
+
+.hometext p {
     font-size: var(--p-font);
     font-weight: 500;
     line-height: 30px;
-    color:white ;
+    color: white;
     margin-bottom: 35px;
 }
-.btn{
+
+.btn {
     display: inline-block;
     padding: 13px 40px;
     background: purple;
@@ -144,21 +161,23 @@ section{
     transition: all .50s ease;
     cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     transform: translateX(10px);
     border: 2px solid var(--text-color);
     background-color: transparent;
     color: var(--text-color)
 }
-.content{
+
+.content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, auto));
     align-items: center;
-    text-align:center;
+    text-align: center;
     gap: 3rem;
 }
 
-.rowimg{
+.rowimg {
     overflow: hidden;
     width: 200px;
     height: 200px;
@@ -167,14 +186,17 @@ section{
     border-radius: 10px;
     cursor: pointer;
 }
-.library{
+
+.library {
     padding-top: 30px;
 }
-.info{
+
+.info {
     position: relative;
     width: 1225px;
     padding-left: 250px;
 }
+
 .info h5 {
     font-size: var(--p-font);
     color: white;
@@ -183,50 +205,58 @@ section{
     letter-spacing: 2px;
     margin-bottom: 10px;
     border-bottom: 2px solid #800080;
-    
+
 }
-.row{
+
+.row {
     padding-bottom: 50px;
 }
-.rowimg img{
+
+.rowimg img {
     width: 300px;
     height: 200px;
     display: block;
     transition: transform 0.9s;
 }
-.rowimg img:hover{
+
+.rowimg img:hover {
     transform: scale(1.3);
 }
-.content{
+
+.content {
     font-size: 17px;
     font-weight: 500;
     cursor: pointer;
     transition: all .50s ease;
 }
-.content h4:hover{
+
+.content h4:hover {
     color: purple;
 }
-.our{
+
+.our {
     text-align: center;
     font-size: 40px;
 }
 
-.desc{
+.desc {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 9rem;
 }
-.descimg{
+
+.descimg {
     transform: scale(0.5);
     width: 20px;
     height: 10px;
     transition: all .50s ease;
     margin-bottom: 600px;
-    
+
 
 }
-.desctext h5{
+
+.desctext h5 {
     font-size: 22px;
     font-weight: 500;
     color: purple;
@@ -234,19 +264,22 @@ section{
     letter-spacing: 6px;
     margin-bottom: 20px;
 }
-.desctext h2{
+
+.desctext h2 {
     font-size: var(--h2-font);
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 25px;
 }
-.desctext p{
+
+.desctext p {
     font-size: var(--p-font);
     font-weight: 500;
     line-height: 30px;
     color: #ffffffab;
     margin-bottom: 35px;
 }
+
 .spot h5 {
     position: relative;
     font-size: var(--p-font);
@@ -256,60 +289,67 @@ section{
     letter-spacing: 2px;
     margin-bottom: 10px;
     border-bottom: 2px solid #800080;
-    
+
 }
 
-.spot{
+.spot {
     padding-top: 400px;
     padding-bottom: 0;
 }
-.spotimg a{
+
+.spotimg a {
     position: relative;
     left: 650px;
     margin-bottom: 50px;
     margin-top: 100px;
 }
-.spotimg h5{
+
+.spotimg h5 {
     text-align: center;
-      font-size: 30px;
+    font-size: 30px;
 }
-.spotimg img{
+
+.spotimg img {
     padding-top: 0;
 }
-.booknow{
+
+.booknow {
     margin-bottom: 200px;
     text-align: center;
     position: relative;
     top: 150px;
 }
 
-.googlem{
+.googlem {
     text-align: left;
     position: relative;
     left: -252px;
     padding-bottom: 1px;
     height: 20px;
 }
-.location{
+
+.location {
     text-align: center;
     font-size: 40px;
     margin-bottom: 45px;
 }
-.contact{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(1, 0, 0, 0)), 
-    url('/UASFRONT/img/800080.png');
+
+.contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(1, 0, 0, 0)),
+        url('/UASFRONT/img/800080.png');
     background-size: cover;
     background-position: bottom center;
-    background-attachment:scroll;
+    background-attachment: scroll;
     align-items: center;
     position: relative;
     height: 520px;
     width: 100%;
     padding-top: 0;
     padding-left: 100px;
-    
+
 }
-.insta{
+
+.insta {
     position: relative;
     top: 40px;
     padding-top: 5px;
@@ -317,10 +357,10 @@ section{
     padding-left: 10px;
     padding-right: 10px;
     margin-right: 120px;
-    
+
 }
 
-.insta h5{
+.insta h5 {
     font-size: var(--p-font);
     color: white;
     font-weight: bold;
@@ -328,20 +368,23 @@ section{
     letter-spacing: 2px;
     margin-bottom: 10px;
     border-bottom: 2px solid #800080;
-    
-    
+
+
 }
-.insta a{
+
+.insta a {
     font-size: 20px;
     color: white;
     margin-right: 18px;
     margin-left: 10px;
     transition: all .50s ease;
 }
-.insta a:hover{
+
+.insta a:hover {
     color: #800080;
 }
-.contactmap{
+
+.contactmap {
     position: relative;
     top: 40px;
     padding-top: 5px;
@@ -350,7 +393,8 @@ section{
     padding-right: 10px;
     margin-right: 120px;
 }
-.contactmap h5{
+
+.contactmap h5 {
     font-size: 20px;
     color: white;
     text-transform: uppercase;
@@ -358,12 +402,14 @@ section{
     margin-bottom: 10px;
     border-bottom: 2px solid #800080;
 }
-.contactmap p a{
+
+.contactmap p a {
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: inherit;
 }
-.hour{
+
+.hour {
     position: relative;
     top: 40px;
     padding-top: 5px;
@@ -372,17 +418,19 @@ section{
     padding-right: 10px;
     margin-right: 120px;
 }
-.hour h5{
+
+.hour h5 {
     font-size: 20px;
     color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
     border-bottom: 2px solid #800080;
-    
-    
+
+
 }
-.wa{
+
+.wa {
     position: relative;
     top: 40px;
     padding-top: 5px;
@@ -391,7 +439,8 @@ section{
     padding-right: 10px;
     margin-right: 120px;
 }
-.wa h5{
+
+.wa h5 {
     font-size: 20px;
     color: white;
     text-transform: uppercase;
@@ -399,7 +448,8 @@ section{
     margin-bottom: 10px;
     border-bottom: 2px solid #800080;
 }
-.email{
+
+.email {
     position: relative;
     top: 40px;
     padding-top: 5px;
@@ -408,7 +458,8 @@ section{
     padding-right: 10px;
     margin-right: 120px;
 }
-.email h5{
+
+.email h5 {
     font-size: 20px;
     color: white;
     text-transform: uppercase;
@@ -416,14 +467,16 @@ section{
     margin-bottom: 10px;
     border-bottom: 2px solid #800080;
 }
-.row1{
+
+.row1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 50px 0;
     margin-left: 40px;
 }
-.gold2{
+
+.gold2 {
     position: absolute;
     transform: scale(0.3);
     width: 50px;
@@ -432,111 +485,129 @@ section{
     margin-right: 100px;
     margin-bottom: 400px;
     margin-left: 200px;
-    
+
 }
-.gold3{
+
+.gold3 {
     transform: scale(0.5);
     width: 20px;
     height: 20px;
     transition: all .50s ease;
-    margin-left:800px;
+    margin-left: 800px;
     margin-bottom: 300px;
 }
-.col1{
+
+.col1 {
     flex-basis: 40%;
     position: relative;
     margin-left: 50px;
 }
-.col1 h2{
+
+.col1 h2 {
     font-size: 54px;
 }
-.col1 h3{
+
+.col1 h3 {
     font-size: 25px;
     color: #800080;
     font-weight: 100;
     margin: 20px 0 7px;
 }
-.col1 p{
+
+.col1 p {
     font-size: 54px;
     color: #ffa343;
     font-weight: 100px;
 }
-.col1 p{
+
+.col1 p {
     margin: 30px 0;
     font-size: 20px;
 }
-.col1 .btn{
+
+.col1 .btn {
     position: relative;
     left: 1px;
     transition: all .50s ease;
-    
+
 }
-.col1::after{
-    content:'';
+
+.col1::after {
+    content: '';
     width: 10px;
-    height: 70%;
-    background:linear-gradient(#ffa343,#800080);
+    height: 90%;
+    background: linear-gradient(#ffa343, #800080);
     position: absolute;
     top: 8px;
     left: -15px;
     transition: all .50s ease;
 }
-.col2{
+
+.col2 {
     position: relative;
     flex-basis: 60%;
     display: flex;
     align-items: center;
 }
-.col2 .pine{
+
+.col2 .pine {
     width: 90%;
     transition: all .50s ease;
 }
-.colorbox{
+
+.colorbox {
     position: absolute;
     right: 60px;
     top: 20px;
-    background:linear-gradient(#ffa343,#800080);
+    background: linear-gradient(#ffa343, #800080);
     height: 100%;
     width: 90%;
     z-index: -1;
     transition: all .50s ease;
-    
+
 }
-.gold2text{
+
+.gold2text {
     position: relative;
     left: 700px;
     font-size: 50px;
     margin-bottom: 100px;
 }
-.gold3text{
+
+.gold3text {
     position: relative;
     left: 320px;
     font-size: 35px;
     margin-bottom: 100px;
 }
-.gold3 .btn{
+
+.gold3 .btn {
     margin-bottom: 2000px;
 }
-.gold2 p{
+
+.gold2 p {
     position: absolute;
     left: 80px;
-   width: 1500px;
-   font-size: 50px;
+    width: 1500px;
+    font-size: 50px;
 }
-.gold3 p{
+
+.gold3 p {
     position: absolute;
     left: 50px;
-   width: 952px;
-   font-size: 30px;
+    width: 952px;
+    font-size: 30px;
     top: 720px;
 }
-.offer{
+
+.offer {
     position: relative;
     overflow: hidden;
     text-align: center;
     padding: 13px 40px;
 }
-.line{
+
+.line {
     width: 150px;
     height: 4px;
     background: #800080;
@@ -544,7 +615,7 @@ section{
     border-radius: 5px;
     transition: all .50s ease;
 }
-/* Popup Styles
+/* bagian popup1 */
 .popup {
     display: none;
     position: fixed;
@@ -552,34 +623,28 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background:  rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    animation: fadeIn 0.5s ease; 
 }
 
 .popup-content {
-    background: url(/UASFRONT/img/orchid.png) rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 5px;
-    height: 550px;
-    width: 880px;
-    margin: auto;
+    background: url(/UASFRONT/img/jembatan.jpg);
+    border-radius: 10px;
+    max-width: 900px;
+    max-height: 600px;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    position: relative;
-    top: 20px;
-    backdrop-filter: blur(10px);
-   
     animation: slideIn 0.5s ease;
-    
 }
-
 
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -591,154 +656,31 @@ section{
         transform: translateY(-20px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.popup-content h2 {
-    position: inherit;
-    color: #ffa343;
-    z-index: 10;
-    margin-bottom: 20px;
-}
-
-
-.popup-content p {
-    position: inherit;
-    color: #ffa343;
-    z-index: 10;
-}
-.tableganteng th,td {
-    padding: 10px;
+.container {
     position: relative;
-    left: 450px;
-    text-align: right;
-    bottom: 140px;
-    
-}
-.input-container {
-    position: relative;
-    display: inline-block;
-}
-
-.input-container input {
-    padding-left: 10px;
-    width: 190px;
-    border-radius: 5px;
-    height: 30px;
-}
-
-.input-container i {
-    position: absolute;
-    left: 165px; 
-    top: 50%;
-    transform: translateY(-50%);
-    color: #aaa; 
-}
-.popupresult{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 45%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-.result-content{
-    background: darkblue;
-    padding: 20px;
-    border-radius: 5px;
-    height: 550px;
-    width: 880px;
-    margin: auto;
-    text-align: center;
-    position: relative;
-    top: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
-    backdrop-filter: blur(10px); 
-    
-}
-.submit{
-    position: relative;
-    text-align: right;
-    top: 300px;
-    right:50px;
-    
-}
-.submit-text{
-    position: relative;
-    left: 50px;
-}
-.submit .btn{
-    margin-top: 10px;
-    position: relative;
-    right:30px;
-}
-
-.pencetan{
-    position: relative;
-    right:300px;
-    top: 43px;
-} */
-
-.container{
-    overflow: hidden;
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 65%;
-    height: 500px;
-    align-items: center;
-    background:url(/UASFRONT/img/jembatan.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    margin-top: 20px;
-    z-index: 1000;
-}
-
-.container .content{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 58%;
-    height: 100%;
-    background:yellowgreen;
-}
-.container .logreg-box{
-    position: absolute;
-    top: 0;
-    right:0;
-    width: calc(100% - 58%);
-    height: 100%;
-    
-}
-.logreg-box .form-box{
-    display:flex;
-    text-align: center;
     background: transparent;
-    backdrop-filter: blur(20px);
-    height: 500px;
+    left: 500px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    /* Menambahkan efek blur */
 }
-.submit .btn{
-    margin-top: 10px;
+
+.isi {
     position: relative;
+    left: 100px;
+    top: 20px;
+    text-align: center;
 }
+
 .input-container {
     position: relative;
     display: inline-block;
@@ -748,17 +690,18 @@ section{
     padding-left: 10px;
     width: 220px;
     border-radius: 5px;
-    height: 30px;
+    height: 35px;
 }
 
 .input-container i {
     position: absolute;
     left: 190px;
-    font-size: 20px; 
+    font-size: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #aaa; 
+    color: #aaa;
 }
+
 .firstname,
 .lastname,
 .phone,
@@ -766,57 +709,780 @@ section{
 .arrival,
 .amount,
 .submit {
-    margin-bottom: 15px; /* Sesuaikan nilai margin-bottom sesuai kebutuhan */
+    margin-bottom: 20px;
+    /* Sesuaikan nilai margin-bottom sesuai kebutuhan */
 }
-.submit h5{
+
+.submit-text {
     position: relative;
-    color: #000;
-    font-size: 12px;
-    right: 36px;
-    bottom: 10px;
-}
-.submit p{
+    left: 520px;
+    bottom: 210px;
     text-align: left;
+}
+
+.submit-text h5 {
+    font-size: 11px;
+    color: #000;
+}
+
+.submit-text p {
+    font-size: 11px;
     position: relative;
     left: 20px;
-    font-size: 11px;
 }
-.pencetan{
+
+.pencetan {
     position: relative;
-    left: -190px;
-    top: 34px;
-} 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 100;
+    left: 5px;
+    top: 35px;
+    
 }
-.popupresult{
-    display:none;
+
+.popup-content .btn {
+    position: relative;
+    left: 250px;
+    bottom: 200px;
+
+}
+
+/* sampe sini popup1*/
+
+/* bagian popup2*/
+.popup2 {
+    display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 60px;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
-.result-content{
-    background: darkblue;
-    padding: 20px;
-    border-radius: 5px;
-    height: 550px;
-    width: 880px;
-    margin: auto;
+.name{
+    margin-bottom: 30px;
+}
+.number{
+    margin-top: 40px;
+}
+
+
+.judulisi2{
+    width: 100%;
+    height: 100px;
+    background: transparent;
+    color: #000;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
     text-align: center;
     position: relative;
-    top: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
-    backdrop-filter: blur(10px);
-    
+    top: 160px;
+}
+
+.popup-content2 {
+    position: relative;
+    background: url(/UASFRONT/img/centang.png);
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    max-height:600px;
+    width: 150%;
+    height: 100%;
+    animation: slideIn 0.5s ease;
+}
+
+.popup-content2 .btn {
+    position: relative;
+    top: 180px;
+    left: 160px;
+}
+
+.popup-content2 span {
+    color:black;
+    position: fixed;
+    left: 1030px;
+    z-index: 1001;
+}
+.isinya{
+    width: 100%;
+    height: 200px;
+    border-bottom: 2px solid black;
+    color: black;
+    background: transparent;
+    position: relative;
+    top: 160px;
+}
+
+.popup-content h2 {
+    color: rgb(168, 58, 58);
+}
+
+.close {
+    position: absolute;
+    top: 65px;
+    right: 305px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Bagian popup our popular place */
+/* ORCHID HOUSE */
+.orchid-content {
+    padding: 20px;
+    background: url(/UASFRONT/img/koran.PNG);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    border-radius: 10px;
+    max-width: 600px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.orchid-content span {
+    color: black;
+    position: relative;
+    left: 270px;
+
+}
+
+.judulorchid p {
+    font-size: var(--p-font);
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+
+}
+
+.judulorchid h2 {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+}
+
+.orchid-content h2::after {
+    content: "";
+    position: relative;
+    top: 10px;
+    display: block;
+    width: 100%;
+    /* Sesuaikan lebar garis sesuai kebutuhan Anda */
+    height: 4px;
+    /* Sesuaikan tinggi garis sesuai kebutuhan Anda */
+    background-color: #000;
+    /* Sesuaikan warna garis sesuai kebutuhan Anda */
+    margin-top: 10px;
+    /* Sesuaikan jarak antara teks dan garis sesuai kebutuhan Anda */
+}
+
+.orchid-content .kontener1 {
+    background: transparent;
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 74%;
+    width: 70%;
+}
+
+.kontener1 .kontener1bg {
+    background: url(/UASFRONT/img/orchidhouse.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 55%;
+    width: 100%;
+}
+
+.kontener1 p {
+    text-align: justify;
+    color: black;
+}
+
+.kontener1 h3 {
+    color: black;
+}
+
+.orchid-content .pinggir {
+    padding: 20px;
+    padding-top: 1px;
+    padding-left: 10px;
+    background: transparent;
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 74%;
+    width: 32%;
+    left: 400px;
+    bottom: 490px;
+    border-left: 2px solid black;
+
+}
+
+.pinggir .pinggirbg {
+    background: url(/UASFRONT/img/house2.jpeg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 40%;
+    width: 102%;
+    margin-bottom: 5px;
+}
+
+.pinggir p {
+    text-align: left;
+    font-size: 12px;
+    color: black;
+    font-weight: 10px;
+}
+
+.pinggir .pinggirbg2 {
+    background: url(/UASFRONT/img/house3.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 32%;
+    width: 102%;
+}
+
+/* GOLDEN PINE */
+.goldenpine-content {
+    padding: 20px;
+    background: url(/UASFRONT/img/vintage1.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    border-radius: 10px;
+    max-width: 600px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.goldenpine-content span {
+    color: black;
+    position: relative;
+    left: 270px;
+
+}
+
+.judulgold p {
+    font-size: var(--p-font);
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+
+}
+
+.judulgold h2 {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+}
+
+.goldenpine-content h2::after {
+    content: "";
+    position: relative;
+    top: 10px;
+    display: block;
+    width: 100%;
+    /* Sesuaikan lebar garis sesuai kebutuhan Anda */
+    height: 4px;
+    /* Sesuaikan tinggi garis sesuai kebutuhan Anda */
+    background-color: #000;
+    /* Sesuaikan warna garis sesuai kebutuhan Anda */
+    margin-top: 10px;
+    /* Sesuaikan jarak antara teks dan garis sesuai kebutuhan Anda */
+}
+
+.goldenpine-content .kontener2 {
+    background: transparent;
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 74%;
+    width: 70%;
+}
+
+.kontener2 .kontener2bg {
+    background: url(/UASFRONT/img/goldenpine.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 55%;
+    width: 100%;
+}
+
+.kontener2 p {
+    text-align: justify;
+    color: black;
+}
+
+.kontener2 h3 {
+    color: black;
+}
+
+.goldenpine-content .pinggir2 {
+    padding: 20px;
+    padding-top: 1px;
+    padding-left: 10px;
+    background: transparent;
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 74%;
+    width: 32%;
+    left: 400px;
+    bottom: 490px;
+    border-left: 2px solid black;
+
+}
+
+.pinggir2 .pinggirbg2 {
+    background: url(/UASFRONT/img/gpine.jpeg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 40%;
+    width: 102%;
+    margin-bottom: 5px;
+}
+
+.pinggir2 p {
+    text-align: left;
+    font-size: 12px;
+    color: black;
+    font-weight: 10px;
+}
+
+.pinggir2 .pinggirbg22 {
+    background: url(/UASFRONT/img/gpine2.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 32%;
+    width: 102%;
+}
+
+/*WOODEN BRANCH */
+.woodbridge-content {
+    padding: 20px;
+    background: url(/UASFRONT/img/koran2.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    border-radius: 10px;
+    max-width: 600px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.woodbridge-content span {
+    color: black;
+    position: relative;
+    left: 270px;
+
+}
+
+.judulwood p {
+    font-size: var(--p-font);
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+
+}
+
+.judulwood h2 {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+}
+
+.woodbridge-content h2::after {
+    content: "";
+    position: relative;
+    top: 10px;
+    display: block;
+    width: 100%;
+    /* Sesuaikan lebar garis sesuai kebutuhan Anda */
+    height: 4px;
+    /* Sesuaikan tinggi garis sesuai kebutuhan Anda */
+    background-color: #000;
+    /* Sesuaikan warna garis sesuai kebutuhan Anda */
+    margin-top: 10px;
+    /* Sesuaikan jarak antara teks dan garis sesuai kebutuhan Anda */
+}
+
+.woodbridge-content .kontener3 {
+    background: transparent;
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 74%;
+    width: 70%;
+}
+
+.kontener3 .kontener3bg {
+    background: url(/UASFRONT/img/woodbridge.png);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 55%;
+    width: 100%;
+}
+
+.kontener3 p {
+    text-align: justify;
+    color: black;
+}
+
+.kontener3 h3 {
+    color: black;
+}
+
+.woodbridge-content .pinggir3 {
+    padding: 20px;
+    padding-top: 1px;
+    padding-left: 10px;
+    background: transparent;
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 74%;
+    width: 32%;
+    left: 400px;
+    bottom: 490px;
+    border-left: 2px solid black;
+
+}
+
+.pinggir3 .pinggirbg3 {
+    background: url(/UASFRONT/img/woodenbranch.jpeg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 40%;
+    width: 102%;
+    margin-bottom: 5px;
+}
+
+.pinggir3 p {
+    text-align: left;
+    font-size: 12px;
+    color: black;
+    font-weight: 10px;
+}
+
+.pinggir3 .pinggirbg23 {
+    background: url(/UASFRONT/img/woodenbranc2.webp);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 32%;
+    width: 102%;
+}
+
+/*ORCHID CASTLEEEEEEE */
+.orchidcastle-content {
+    padding: 20px;
+    background: url(/UASFRONT/img/koran3.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    border-radius: 10px;
+    max-width: 600px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.orchidcastle-content span {
+    color: black;
+    position: relative;
+    left: 270px;
+
+}
+
+.judulcastle p {
+    font-size: var(--p-font);
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+
+}
+
+.judulcastle h2 {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+}
+
+.orchidcastle-content h2::after {
+    content: "";
+    position: relative;
+    top: 10px;
+    display: block;
+    width: 100%;
+    /* Sesuaikan lebar garis sesuai kebutuhan Anda */
+    height: 4px;
+    /* Sesuaikan tinggi garis sesuai kebutuhan Anda */
+    background-color: #000;
+    /* Sesuaikan warna garis sesuai kebutuhan Anda */
+    margin-top: 10px;
+    /* Sesuaikan jarak antara teks dan garis sesuai kebutuhan Anda */
+}
+
+.orchidcastle-content .kontener4 {
+    background: transparent;
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 74%;
+    width: 70%;
+}
+
+.kontener4 .kontener4bg {
+    background: url(/UASFRONT/img/OrchidForestCikoleTicketinBandung.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 55%;
+    width: 100%;
+}
+
+.kontener4 p {
+    text-align: justify;
+    color: black;
+}
+
+.kontener4 h3 {
+    color: black;
+}
+
+.orchidcastle-content .pinggir4 {
+    padding: 20px;
+    padding-top: 1px;
+    padding-left: 10px;
+    background: transparent;
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 74%;
+    width: 32%;
+    left: 400px;
+    bottom: 490px;
+    border-left: 2px solid black;
+
+}
+
+.pinggir4 .pinggirbg4 {
+    background: url(/UASFRONT/img/orchidcastle_pinggir.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 40%;
+    width: 102%;
+    margin-bottom: 5px;
+}
+
+.pinggir4 p {
+    text-align: left;
+    font-size: 12px;
+    color: black;
+    font-weight: 10px;
+}
+
+.pinggir4 .pinggirbg24 {
+    background: url(/UASFRONT/img/orchidcastle_pinggir2.jpg);
+    background-size: cover;
+    /* Menyesuaikan ukuran gambar agar selalu mencakup seluruh elemen */
+    background-position: center;
+    /* Menentukan posisi gambar pada elemen */
+    position: relative;
+    height: 32%;
+    width: 102%;
+}
+
+body.popup-open {
+    overflow: hidden;
+}
+
+
+.carousel {
+    width: 1300px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+
+}
+
+.slide {
+    min-width: 100%;
+    overflow: hidden;
+
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+
+}
+
+#prev,
+#next {
+    position: absolute;
+    top: 930px;
+    font-size: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 8px;
+    color: #ffffff;
+    font-style: bold;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+#prev:hover,
+#next:hover {
+    transform: scale(1.7);
+}
+
+#prev {
+    left: 35px;
+}
+
+#next {
+    right: 35px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.follow-btn {
+    cursor: pointer;
+    position: relative;
+    bottom: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.arrow-down {
+    display: inline-block;
+    margin-left: 5px; /* Adjust the margin as needed */
 }
